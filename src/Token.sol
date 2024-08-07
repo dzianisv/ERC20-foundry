@@ -10,8 +10,9 @@ contract MintableToken is ERC20, Ownable {
     // Constructor to initialize the token with a name and symbol
     constructor(
         string memory name,
-        string memory symbol
-    ) ERC20(name, symbol) Ownable(msg.sender) {}
+        string memory symbol,
+        address owner
+    ) ERC20(name, symbol) Ownable(owner) {}
 
     // Mint function that allows the owner to mint new tokens
     function mint(address to, uint256 amount) public onlyOwner {

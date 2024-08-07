@@ -17,7 +17,7 @@ contract TokenDeploy is Script {
         vm.startBroadcast(deployerPrivateKey);
         string memory name = vm.envString("ERC20_NAME");
         string memory symbol = vm.envString("ERC20_SYMBOL");
-        MintableToken token = new MintableToken(name, symbol);
+        MintableToken token = new MintableToken(name, symbol, msg.sender);
         vm.stopBroadcast();
         vm.writeFile(".data/token.txt", address(token).toHexString());
     }
