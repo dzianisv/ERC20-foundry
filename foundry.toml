@@ -4,8 +4,7 @@ out = "out"
 test = "test"
 libs = ["lib"]
 fs_permissions = [{ access = "read-write", path = ".data" }]
-solc = "0.8.12"
-evm_version = 'cancun'
+solc = "0.8.20"
 
 [rpc_endpoints]
 base = "https://mainnet.base.org"
@@ -13,9 +12,9 @@ base_sepolia = "https://sepolia.base.org"
 base_goerli = "https://goerli.base.org"
 
 [etherscan]
-base = { key = "${BLOCK_EXPLORER_API_KEY}" }
-base_sepolia = { key = "${BLOCK_EXPLORER_API_KEY}" }
-base_goerli = { key = "${BLOCK_EXPLORER_API_KEY}" }
+base = { key = "" }
+base_sepolia = { key = "" }
+base_goerli = { key = "" }
 
 [profile.ci.fuzz]
 runs = 10_000
